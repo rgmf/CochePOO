@@ -1,31 +1,40 @@
 package es.rgmf;
 
 public class Coche {
-    String tipo;
-    String modelo;
-    String color;
-    int velocidad;
+    private String tipo;
+    private String modelo;
+    private String color;
+    private int velocidad;
 
-    Coche() {
+    public Coche() {
         tipo = "Desconocido";
         modelo = "Desconocido";
         color = "Desconocido";
         velocidad = 0;
     }
 
-    Coche(String tipo, String modelo, String color) {
+    public Coche(String tipo, String modelo, String color) {
         this.tipo = tipo;
         this.modelo = modelo;
         this.color = color;
         this.velocidad = 0;
     }
 
-    int incrementarVelocidad(int incremento) {
+    public int incrementarVelocidad(int incremento) {
         velocidad += incremento;
         return velocidad;
     }
 
-    void cambiarColor(String nuevoColor) {
+    public void cambiarColor(String nuevoColor) {
         color = nuevoColor;
+    }
+    
+    @Override
+    public String toString() {
+        return "COCHE:\n" +
+                "Tipo: " + this.tipo + "\n" +
+                "Modelo: " + this.modelo + "\n" +
+                "Color: " + this.color + "\n" +
+                "Velocidad: " + this.velocidad + " km/h\n";
     }
 }
